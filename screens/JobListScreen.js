@@ -18,6 +18,7 @@ class NotificationsScreen extends React.Component {
         <Text style={styles.biggerText}>King Tuts</Text>
         <Text style={styles.basicText}>Date/Time</Text>
         <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
+        <TouchableOpacity style={styles.button}><Text>MARK AS COMPLETE</Text></TouchableOpacity>
         </View>
       </View>
     );
@@ -57,6 +58,15 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: '#d6d7da',
   },
+  button: {
+    width: '100%',
+    height: 30,
+    color: '#000',
+    backgroundColor: 'orange',
+    marginTop: 10,
+    padding: 5,
+    alignItems: 'center'
+  }
 })
 
 export default NotificationsScreen;
