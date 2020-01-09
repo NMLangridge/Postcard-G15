@@ -8,6 +8,19 @@ class GigsScreen extends React.Component {
   static navigationOptions = {
     title: 'Postcard',
   };
+
+  constructor(props){
+    super(props);
+    this.state = {
+      venue: '',
+      serviceType: '',
+      bandProfile: '',
+      date: '',
+      time: ''
+    }
+
+  }
+
   render() {
     const {navigate} = this.props.navigation;
     return (
@@ -33,35 +46,56 @@ class GigsScreen extends React.Component {
       //
       // </View>
 
-      <View style={styles.screenContainer}>
-        <View>
+      <ScrollView style={styles.inputContainer}>
+        <View style={styles.screenContainer}>
           <Text style={styles.title}>MAKE A REQUEST</Text>
+          <Text style={styles.basicText}>Venue:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(venue) => {
+              this.setState({venue})
+            }}
+            value={this.state.venue}
+            placeholder="Venue"
+          />
+          <Text style={styles.basicText}>Service Type:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(serviceType) => {
+              this.setState({serviceType})
+            }}
+            value={this.state.serviceType}
+            placeholder="Service Type"
+          />
+          <Text style={styles.basicText}>Band Profile:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(bandProfile) => {
+              this.setState({bandProfile})
+            }}
+            value={this.state.bandProfile}
+            placeholder="Band Profile"
+          />
+          <Text style={styles.basicText}>Date:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(date) => {
+              this.setState({date})
+            }}
+            value={this.state.date}
+            placeholder="Date"
+          />
+          <Text style={styles.basicText}>Time:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(time) => {
+              this.setState({time})
+            }}
+            value={this.state.time}
+            placeholder="Time"
+          />
         </View>
-        <ScrollView style={styles.inputContainer}>
-          <View style={styles.screenContainer}>
-            <TextInput
-              style={styles.textInput}
-              placeholder="Venue"
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="Service Type"
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="Band Profile"
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="Date"
-            />
-            <TextInput
-              style={styles.textInput}
-              placeholder="Time"
-            />
-          </View>
-        </ScrollView>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -98,9 +132,8 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase'
   },
   basicText: {
-    fontSize: 12,
-    textTransform: 'uppercase',
-    color: 'orange'
+    color: '#e8effa',
+    paddingBottom: 5,
   },
   biggerText: {
     color: '#e8effa',
