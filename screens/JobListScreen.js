@@ -6,6 +6,11 @@ class NotificationsScreen extends React.Component {
   static navigationOptions = {
     title: 'Postcard - JobList',
   };
+
+  removeFromList() {
+    
+  }
+
   render() {
     const {navigate} = this.props.navigation;
     return (
@@ -18,7 +23,7 @@ class NotificationsScreen extends React.Component {
         <Text style={styles.biggerText}>King Tuts</Text>
         <Text style={styles.basicText}>Date/Time</Text>
         <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
-        <TouchableOpacity style={styles.button}><Text>MARK AS COMPLETE</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={this.removeFromList}><Text>MARK AS COMPLETE</Text></TouchableOpacity>
         </View>
       </View>
     );
