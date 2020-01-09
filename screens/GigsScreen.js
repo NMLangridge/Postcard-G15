@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, FlatList, ScrollView, TextInput, Text, View, Button, TouchableOpacity } from 'react-native';
+import GigForm from '../components/GigForm';
+
 
 class GigsScreen extends React.Component {
 
@@ -9,14 +11,56 @@ class GigsScreen extends React.Component {
   render() {
     const {navigate} = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Gigs</Text>
-        <View style={styles.giglist}>
-        <Text style={styles.basicText}>Venue</Text>
-        <Text style={styles.biggerText}>King Tuts</Text>
-        <Text style={styles.basicText}>Date/Time</Text>
-        <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
+
+      // <View style={styles.container}>
+      //   <Text style={styles.title}>Gigs</Text>
+      //   <View style={styles.giglist}>
+      //     <Text style={styles.basicText}>Venue</Text>
+      //     <Text style={styles.biggerText}>King Tuts</Text>
+      //     <Text style={styles.basicText}>Date/Time</Text>
+      //     <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
+      //   </View>
+      //   <FlatList
+      //     style={styles.giglist}
+      //     keyExtractor={(item, index) => index.toString()}
+      //     renderItem={ ({item, index}) => {
+      //       return(
+      //         <GigForm gigForm={item} />
+      //       )
+      //     }}
+      //     >
+      //   </FlatList>
+      //
+      // </View>
+
+      <View style={styles.screenContainer}>
+        <View>
+          <Text style={styles.title}>MAKE A REQUEST</Text>
         </View>
+        <ScrollView>
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Venue"
+            />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Service Type"
+            />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Band Profile"
+            />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Date"
+            />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Time"
+            />
+          </View>
+        </ScrollView>
       </View>
     );
   }
