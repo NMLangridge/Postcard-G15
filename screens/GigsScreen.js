@@ -37,8 +37,8 @@ class GigsScreen extends React.Component {
         <View>
           <Text style={styles.title}>MAKE A REQUEST</Text>
         </View>
-        <ScrollView>
-          <View style={styles.inputContainer}>
+        <ScrollView style={styles.inputContainer}>
+          <View style={styles.screenContainer}>
             <TextInput
               style={styles.textInput}
               placeholder="Venue"
@@ -67,12 +67,27 @@ class GigsScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screenContainer: {
     flex: 1,
     alignItems: 'center',
     width: '100%',
     backgroundColor: '#0b1424',
     padding: 10,
+  },
+  inputContainer: {
+    flexDirection: 'column',
+    shadowOffset: {width: 0, height: 3},
+    shadowColor: '#171717',
+    shadowOpacity: 0.1,
+    backgroundColor: '#0b1424',
+  },
+  input: {
+    backgroundColor: 'lavender',
+    flex: 1,
+    fontSize: 14,
+    height: 35,
+    borderWidth: 1,
+    paddingLeft: 5,
   },
   title: {
     alignItems: 'center',
