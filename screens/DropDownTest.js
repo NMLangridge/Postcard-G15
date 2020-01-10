@@ -21,3 +21,22 @@ class DropDownTest extends Component {
 }
 
 export default DropDownTest;
+
+// RadioButtonTest
+
+// render() {
+//     const options = [
+//       {
+//         key: 'live',
+//         text: 'Live Photos',
+//       },
+//       {
+//         key: 'promo',
+//         text: 'Promo Shots',
+//       },
+//     ];
+
+//     <RadioButtons
+//     options={options}
+//     userType={this.changeUserType}
+//     />

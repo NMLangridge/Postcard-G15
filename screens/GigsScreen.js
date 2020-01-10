@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, FlatList, ScrollView, TextInput, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, FlatList, ScrollView, TextInput, Text, View, Button, TouchableOpacity, TouchableHighlight } from 'react-native';
 import GigForm from '../components/GigForm';
 import { Dropdown } from 'react-native-material-dropdown';
+import RadioButtons from '../components/RadioButtons.js';
 
 class GigsScreen extends React.Component {
 
@@ -149,6 +150,6 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: '#d6d7da',
   }
-})
+});
 
 export default GigsScreen;
