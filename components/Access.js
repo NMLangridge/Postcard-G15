@@ -2,20 +2,20 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, Button, View, TouchableHighlight } from 'react-native';
 import Login from './Login';
-import {f, auth, firestore} from '../config/config.js';
+import { f, auth, firestore } from '../config/config.js';
 
 class Access extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       email: '',
       password: ''
     }
-  //  this.updateApp = this.updateApp.bind(this);
+    //  this.updateApp = this.updateApp.bind(this);
     this.loginUser = this.loginUser.bind(this);
   }
 
-  loginUser = async(email, password) => {
+  loginUser = async (email, password) => {
     if (email !== '' && password !== '') {
       try {
         let user = await auth.signInWithEmailAndPassword(email, password)
@@ -29,23 +29,23 @@ class Access extends React.Component {
     }
   }
 
-
   render() {
     if (!this.props.screenProps) {
       return 'Loading ...'
     }
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
 
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Log In To Postcard</Text>
         <Login
-          textChangeEmail={email => this.setState({email})}
-          textChangePassword={password => this.setState({password})}
+          textChangeEmail={email => this.setState({ email })}
+          textChangePassword={password => this.setState({ password })}
           loginUser={this.loginUser}
           updateAppApp={this.props.screenProps} />
       </View>
-    )};
+    )
+  };
 }
 
 //CSS section
@@ -68,6 +68,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   }
 });
-
 
 export default Access;

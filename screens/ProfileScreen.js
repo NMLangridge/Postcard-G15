@@ -1,59 +1,57 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableHighlight } from 'react-native';
-import {f, auth, firestore} from '../config/config.js';
-
+import { f, auth, firestore } from '../config/config.js';
 
 class ProfileScreen extends React.Component {
   static navigationOptions = {
     title: 'Postcard - Your Profile',
   };
 
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
-
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <Text style={styles.title}>PROFILE</Text>
 
-      <View style={styles.info}>
-        <Text style={styles.basicText}>Name</Text>
-        <Text style={styles.biggerText}>{this.props.screenProps[0].displayName}</Text>
-        <Text style={styles.basicText}>Email</Text>
-        <Text style={styles.biggerText}>{this.props.screenProps[0].email}</Text>
-        <Text style={styles.basicText}>Phone number</Text>
-        <Text style={styles.biggerText}>{this.props.screenProps[0].phoneNumber}</Text>
-        <Text style={styles.basicText}>User Type</Text>
-        <Text style={styles.biggerText}>{this.props.screenProps[0].userType==='artist' ? 'Artist' : 'Photographer'}</Text>
-        <View>
-          {
-            this.props.screenProps[0].userType==='artist' ?
-            (<Text>  </Text>)
-            :
-            (<View>
-              <Text style={styles.basicText}>Camera</Text>
-              <Text style={styles.biggerText}>{this.props.screenProps[0].camera}</Text>
-            </View>)
-          }
-        </View>
+        <View style={styles.info}>
+          <Text style={styles.basicText}>Name</Text>
+          <Text style={styles.biggerText}>{this.props.screenProps[0].displayName}</Text>
+          <Text style={styles.basicText}>Email</Text>
+          <Text style={styles.biggerText}>{this.props.screenProps[0].email}</Text>
+          <Text style={styles.basicText}>Phone number</Text>
+          <Text style={styles.biggerText}>{this.props.screenProps[0].phoneNumber}</Text>
+          <Text style={styles.basicText}>User Type</Text>
+          <Text style={styles.biggerText}>{this.props.screenProps[0].userType === 'artist' ? 'Artist' : 'Photographer'}</Text>
+          <View>
+            {
+              this.props.screenProps[0].userType === 'artist' ?
+                (<Text>  </Text>)
+                :
+                (<View>
+                  <Text style={styles.basicText}>Camera</Text>
+                  <Text style={styles.biggerText}>{this.props.screenProps[0].camera}</Text>
+                </View>)
+            }
+          </View>
 
-        <TouchableHighlight
-          onPress={() => {
-            auth.signOut()
-            .catch((error) => {
-              console.log('Error when signing out', error);
-            });
-          }}
-          style={styles.logoutButton}>
+          <TouchableHighlight
+            onPress={() => {
+              auth.signOut()
+                .catch((error) => {
+                  console.log('Error when signing out', error);
+                });
+            }}
+            style={styles.logoutButton}>
 
-          <Text style={{color: '#000'}}>
-            LOG OUT
+            <Text style={{ color: '#000' }}>
+              LOG OUT
           </Text>
 
-        </TouchableHighlight>
+          </TouchableHighlight>
         </View>
       </View>
     );

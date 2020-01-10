@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, FlatList, Text, TextInput, ScrollView, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, FlatList, Text, TextInput, ScrollView, View, TouchableOpacity } from 'react-native';
 
 export default class GigForm extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       venue: '',
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flexDirection: 'column',
-    shadowOffset: {width: 0, height: 3},
+    shadowOffset: { width: 0, height: 3 },
     shadowColor: '#171717',
     shadowOpacity: 0.1,
     backgroundColor: '#0b1424',

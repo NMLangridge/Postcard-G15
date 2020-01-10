@@ -8,7 +8,7 @@ class VenuesScreen extends React.Component {
   };
 
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
 
     return (
       <View style={styles.container}>
@@ -20,14 +20,14 @@ class VenuesScreen extends React.Component {
                 style={styles.list}
                 data={this.props.screenProps[1]}
                 keyExtractor={(item, index) => index.toString()}
-                renderItem={ ({item, index}) => {
-                  return(
+                renderItem={({ item, index }) => {
+                  return (
                     <VenueItem venueItem={item} />
                   )
                 }}
               />
             </View>
-          ):(
+          ) : (
             <Text style={styles.basicText}>Loading venues...</Text>
           )
         }

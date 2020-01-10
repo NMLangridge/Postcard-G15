@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Text, TextInput, StyleSheet, Button, TouchableHighlight} from 'react-native';
-import {f, auth, firestore} from '../config/config.js';
+import { View, Text, TextInput, StyleSheet, Button, TouchableHighlight } from 'react-native';
+import { f, auth, firestore } from '../config/config.js';
 
 export default class Login extends React.Component {
 
@@ -8,7 +8,7 @@ export default class Login extends React.Component {
     title: 'Postcard - Log In',
   };
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       email: '',
@@ -17,7 +17,7 @@ export default class Login extends React.Component {
     this.login = this.login.bind(this);
   }
 
-  login(){
+  login() {
     this.props.loginUser(this.state.email, this.state.password);
     this.props.updateAppApp(true);
   }
@@ -32,29 +32,29 @@ export default class Login extends React.Component {
         <Text style={styles.basicText}>Email: </Text>
         <TextInput
           style={styles.input}
-          onChangeText={(text) => this.setState({email: text})}
+          onChangeText={(text) => this.setState({ email: text })}
           value={this.state.email} />
 
 
         <Text style={styles.basicText}>Password:</Text>
         <TextInput
           style={styles.input}
-          onChangeText={(text) => this.setState({password: text})}
+          onChangeText={(text) => this.setState({ password: text })}
           secureTextEntry={true}
-          value={this.state.password} />      
+          value={this.state.password} />
 
-          <View>
+        <View>
           <TouchableHighlight
             onPress={() => this.login()}
-            >
+          >
 
-          <Text
-            style={styles.loginButton}>
-            LOG IN
+            <Text
+              style={styles.loginButton}>
+              LOG IN
           </Text>
 
           </TouchableHighlight>
-          </View>
+        </View>
 
       </View>
     )
@@ -69,33 +69,33 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   inputContainer: {
-   flexDirection: 'column',
-   shadowOffset: {width: 0, height: 3},
-   shadowColor: '#171717',
-   shadowOpacity: 0.1,
-   width: '100%',
-   padding: 50,
- },
- input: {
-   backgroundColor: 'lavender',
-   fontSize: 14,
-   height: 35,
-   borderWidth: 1,
-   paddingLeft: 5,
- },
- basicText: {
-   color: '#e8effa',
-   padding: 10,
- },
- loginButton: {
-   color: '#000',
-   textAlign: 'center',
-   borderRadius: 4,
-   borderWidth: 1,
-   borderColor: 'orange',
-   padding: 5,
-   width: '100%',
-   backgroundColor: 'orange',
-   marginTop: 35,
- }
+    flexDirection: 'column',
+    shadowOffset: { width: 0, height: 3 },
+    shadowColor: '#171717',
+    shadowOpacity: 0.1,
+    width: '100%',
+    padding: 50,
+  },
+  input: {
+    backgroundColor: 'lavender',
+    fontSize: 14,
+    height: 35,
+    borderWidth: 1,
+    paddingLeft: 5,
+  },
+  basicText: {
+    color: '#e8effa',
+    padding: 10,
+  },
+  loginButton: {
+    color: '#000',
+    textAlign: 'center',
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: 'orange',
+    padding: 5,
+    width: '100%',
+    backgroundColor: 'orange',
+    marginTop: 35,
+  }
 });

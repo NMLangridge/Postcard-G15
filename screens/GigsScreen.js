@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, FlatList, ScrollView, TextInput, Text, View, Button, TouchableOpacity } from 'react-native';
 import GigForm from '../components/GigForm';
-
+import { Dropdown } from 'react-native-material-dropdown';
 
 class GigsScreen extends React.Component {
 
@@ -9,7 +9,7 @@ class GigsScreen extends React.Component {
     title: 'Postcard',
   };
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       venue: '',
@@ -22,7 +22,7 @@ class GigsScreen extends React.Component {
   }
 
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     return (
 
       // <View style={styles.container}>
@@ -53,7 +53,7 @@ class GigsScreen extends React.Component {
           <TextInput
             style={styles.input}
             onChangeText={(venue) => {
-              this.setState({venue})
+              this.setState({ venue })
             }}
             value={this.state.venue}
             placeholder="Venue"
@@ -62,16 +62,16 @@ class GigsScreen extends React.Component {
           <TextInput
             style={styles.input}
             onChangeText={(serviceType) => {
-              this.setState({serviceType})
+              this.setState({ serviceType })
             }}
             value={this.state.serviceType}
-            placeholder="Service Type"
+            placeholder="Live/Promo/Production"
           />
           <Text style={styles.basicText}>Band Profile:</Text>
           <TextInput
             style={styles.input}
             onChangeText={(bandProfile) => {
-              this.setState({bandProfile})
+              this.setState({ bandProfile })
             }}
             value={this.state.bandProfile}
             placeholder="Band Profile"
@@ -80,7 +80,7 @@ class GigsScreen extends React.Component {
           <TextInput
             style={styles.input}
             onChangeText={(date) => {
-              this.setState({date})
+              this.setState({ date })
             }}
             value={this.state.date}
             placeholder="Date"
@@ -89,11 +89,12 @@ class GigsScreen extends React.Component {
           <TextInput
             style={styles.input}
             onChangeText={(time) => {
-              this.setState({time})
+              this.setState({ time })
             }}
             value={this.state.time}
             placeholder="Time"
           />
+
         </View>
       </ScrollView>
     );
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flexDirection: 'column',
-    shadowOffset: {width: 0, height: 3},
+    shadowOffset: { width: 0, height: 3 },
     shadowColor: '#171717',
     shadowOpacity: 0.1,
     backgroundColor: '#0b1424',

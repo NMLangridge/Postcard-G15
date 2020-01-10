@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default class VenueItem extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
   }
 
-  render () {
+  render() {
     const venueItem = this.props.venueItem;
 
     return (
@@ -14,7 +14,7 @@ export default class VenueItem extends React.Component {
         <Text style={styles.basicText}>Venue</Text>
         <Text style={styles.biggerText}>{venueItem.name || 'Wonderful Place'}</Text>
         <Text style={styles.basicText}>Contact</Text>
-        <Text style={styles.biggerText}>{ venueItem.email }</Text>
+        <Text style={styles.biggerText}>{venueItem.email}</Text>
       </View>
     )
   }

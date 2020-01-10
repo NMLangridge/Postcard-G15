@@ -15,10 +15,10 @@ class NotificationsScreen extends React.Component {
         <Text style={styles.title}>Notifications</Text>
         <FlatList
           style={styles.list}
-          data={[{venue: 'King Tuts', date: 'Now', customer: 'James Hawthorne', type: 'Solo'}, {venue: 'ABC', date: 'January 1st, 2020 at 7pm', customer: 'Ruby Riot', type: 'Band'}, {venue: 'SECC', date: 'Februrary 10th, 2020 at 8pm', customer: 'Aaron Carter', type: 'Solo'}]}
+          data={[{ venue: 'King Tuts', date: 'Now', customer: 'James Hawthorne', type: 'Solo' }, { venue: 'ABC', date: 'January 1st, 2020 at 7pm', customer: 'Ruby Riot', type: 'Band' }, { venue: 'SECC', date: 'Februrary 10th, 2020 at 8pm', customer: 'Aaron Carter', type: 'Solo' }]}
           keyExtractor={(item, index) => index.toString()}
-          renderItem={ ({item, index}) => {
-            return(
+          renderItem={({ item, index }) => {
+            return (
               <NotificationItem notificationItem={item} />
             )
           }}

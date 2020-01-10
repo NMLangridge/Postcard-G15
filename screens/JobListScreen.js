@@ -8,22 +8,21 @@ class NotificationsScreen extends React.Component {
   };
 
   removeFromList() {
-    
   }
 
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Job List</Text>
         <View style={styles.joblist}>
-        <Text style={styles.basicText}>Artist</Text>
-        <Text style={styles.biggerText}>Kyle's One Man Band</Text>
-        <Text style={styles.basicText}>Venue</Text>
-        <Text style={styles.biggerText}>King Tuts</Text>
-        <Text style={styles.basicText}>Date/Time</Text>
-        <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
-        <TouchableOpacity style={styles.button} onPress={this.removeFromList}><Text>MARK AS COMPLETE</Text></TouchableOpacity>
+          <Text style={styles.basicText}>Artist</Text>
+          <Text style={styles.biggerText}>Kyle's One Man Band</Text>
+          <Text style={styles.basicText}>Venue</Text>
+          <Text style={styles.biggerText}>King Tuts</Text>
+          <Text style={styles.basicText}>Date/Time</Text>
+          <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
+          <TouchableOpacity style={styles.button} onPress={this.removeFromList}><Text>MARK AS COMPLETE</Text></TouchableOpacity>
         </View>
       </View>
     );
