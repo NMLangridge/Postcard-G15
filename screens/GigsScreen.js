@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, FlatList, ScrollView, TextInput, Text, View, Button, TouchableOpacity, TouchableHighlight } from 'react-native';
 import GigForm from '../components/GigForm';
-import { Dropdown } from 'react-native-material-dropdown';
 import RadioButtonsServiceType from '../components/RadioButtonsServiceType.js';
 
 class GigsScreen extends React.Component {
@@ -119,7 +118,7 @@ class GigsScreen extends React.Component {
           />
 
           <TouchableHighlight
-            
+
           >
 
             <Text style={styles.button}>SUBMIT REQUEST</Text>
