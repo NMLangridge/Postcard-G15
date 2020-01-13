@@ -118,6 +118,13 @@ class GigsScreen extends React.Component {
             placeholder="Time"
           />
 
+          <TouchableHighlight
+            
+          >
+
+            <Text style={styles.button}>SUBMIT REQUEST</Text>
+          </TouchableHighlight>
+
         </View>
       </ScrollView>
     );
@@ -126,11 +133,8 @@ class GigsScreen extends React.Component {
 
 const styles = StyleSheet.create({
   screenContainer: {
-    flex: 1,
-    alignItems: 'center',
-    width: '100%',
-    backgroundColor: '#0b1424',
-    padding: 10,
+    padding: 50,
+    paddingTop: 10
   },
   inputContainer: {
     flexDirection: 'column',
@@ -171,6 +175,15 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 0.5,
     borderColor: '#d6d7da',
+  },
+  button: {
+    color: '#000',
+    textAlign: 'center',
+    borderRadius: 4,
+    borderWidth: 1,
+    backgroundColor: 'orange',
+    borderColor: 'orange',
+    padding: 5,
   }
 });
 

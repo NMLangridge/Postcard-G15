@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 
 class NotificationsScreen extends React.Component {
 
@@ -7,7 +8,12 @@ class NotificationsScreen extends React.Component {
     title: 'Postcard - JobList',
   };
 
-  removeFromList() {
+  removeFromList(item) {
+    let todos = this.state.todos;
+
+    todos = todos.filter((todo) => todo.id !== item.id);
+
+    this.setState({ todos });
   }
 
   render() {
@@ -22,7 +28,13 @@ class NotificationsScreen extends React.Component {
           <Text style={styles.biggerText}>King Tuts</Text>
           <Text style={styles.basicText}>Date/Time</Text>
           <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
-          <TouchableOpacity style={styles.button} onPress={this.removeFromList}><Text>MARK AS COMPLETE</Text></TouchableOpacity>
+
+          <FlatList
+
+          />
+          
+          <TouchableOpacity style={styles.button} onPress={() => this.removeFromList()}><Text>MARK AS COMPLETE</Text></TouchableOpacity>
+          
         </View>
       </View>
     );
