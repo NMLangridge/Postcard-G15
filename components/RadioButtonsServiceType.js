@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 
-export default class RadioButtons extends React.Component {
+export default class RadioButtonsServiceType extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ export default class RadioButtons extends React.Component {
                 style={styles.circle}
                 onPress={() => {
                   this.setState({ value: item.key })
-                  this.props.userType(item.key)
+                  this.props.serviceType(item.key)
                 }}>
                   
                 {this.state.value === item.key && (<View style={styles.checkedCircle} />)}

@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, FlatList, ScrollView, TextInput, Text, View, Button, TouchableOpacity, TouchableHighlight } from 'react-native';
 import GigForm from '../components/GigForm';
 import { Dropdown } from 'react-native-material-dropdown';
-import RadioButtons from '../components/RadioButtons.js';
+import RadioButtonsServiceType from '../components/RadioButtonsServiceType.js';
 
 class GigsScreen extends React.Component {
 
@@ -20,9 +20,29 @@ class GigsScreen extends React.Component {
       time: ''
     }
 
+    this.changeServiceType = this.changeServiceType.bind(this);
+
+  }
+
+  changeServiceType(value) {
+    this.setState({ serviceType: value });
   }
 
   render() {
+    const options = [
+      {
+        key: 'live',
+        text: 'Live Photos',
+      },
+      {
+        key: 'promo',
+        text: 'Promo Shots',
+      },
+      {
+        key: 'production',
+        text: 'Production',
+      }
+    ];
     const { navigate } = this.props.navigation;
     return (
 
@@ -60,14 +80,16 @@ class GigsScreen extends React.Component {
             placeholder="Venue"
           />
           <Text style={styles.basicText}>Service Type:</Text>
-          <TextInput
+          <RadioButtonsServiceType
+            options={options}
+            serviceType={this.serviceType}
             style={styles.input}
             onChangeText={(serviceType) => {
               this.setState({ serviceType })
             }}
             value={this.state.serviceType}
-            placeholder="Live/Promo/Production"
           />
+
           <Text style={styles.basicText}>Band Profile:</Text>
           <TextInput
             style={styles.input}
