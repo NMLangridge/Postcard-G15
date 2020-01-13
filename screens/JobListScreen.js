@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { StyleSheet, FlatList, Text, View, Button, TouchableOpacity } from 'react-native';
+import JobItem from '../components/JobItem';
 
 class NotificationsScreen extends React.Component {
 
@@ -8,12 +8,21 @@ class NotificationsScreen extends React.Component {
     title: 'Postcard - JobList',
   };
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      jobs: [
+        {id: 0, artist: "Kyle's One Man Band", venue: "King Tuts", dateTime: "Friday 15th Nov, 8pm"}
+      ]
+    }
+  }
+
   removeFromList(item) {
-    let todos = this.state.todos;
+    let jobs = this.state.jobs;
 
-    todos = todos.filter((todo) => todo.id !== item.id);
+    jobs = jobs.filter((job) => job.id !== item.id);
 
-    this.setState({ todos });
+    this.setState({ jobs });
   }
 
   render() {
@@ -30,11 +39,19 @@ class NotificationsScreen extends React.Component {
           <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
 
           <FlatList
-
+            style={styles.joblist}
+            data={this.state.jobs}
+            extraData={this.state}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({item, index}) => {
+              return(
+                item
+              )
+            }}
           />
-          
+
           <TouchableOpacity style={styles.button} onPress={() => this.removeFromList()}><Text>MARK AS COMPLETE</Text></TouchableOpacity>
-          
+
         </View>
       </View>
     );
