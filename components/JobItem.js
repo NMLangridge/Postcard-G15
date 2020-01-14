@@ -26,17 +26,12 @@ export default class JobItem extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#0b1424',
+    width: '100%',
     padding: 10,
-  },
-  title: {
-    alignItems: 'center',
-    fontSize: 26,
-    paddingTop: 10,
-    paddingBottom: 10,
-    color: 'orange',
-    textTransform: 'uppercase'
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+    marginBottom: 10
   },
   basicText: {
     fontSize: 12,
@@ -48,15 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 5,
   },
-  joblist: {
-    width: '100%',
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 4,
-    borderWidth: 0.5,
-    borderColor: '#d6d7da',
-  },
-    button: {
+  button: {
     width: '100%',
     height: 30,
     color: '#000',
