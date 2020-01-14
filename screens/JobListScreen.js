@@ -15,6 +15,7 @@ class NotificationsScreen extends React.Component {
         {id: 0, artist: "Kyle's One Man Band", venue: "King Tuts", dateTime: "Friday 15th Nov, 8pm"}
       ]
     }
+    this.removeFromList = this.removeFromList.bind(this);
   }
 
   removeFromList(item) {
@@ -28,31 +29,20 @@ class NotificationsScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Job List</Text>
-        <View style={styles.joblist}>
-          <Text style={styles.basicText}>Artist</Text>
-          <Text style={styles.biggerText}>Kyle's One Man Band</Text>
-          <Text style={styles.basicText}>Venue</Text>
-          <Text style={styles.biggerText}>King Tuts</Text>
-          <Text style={styles.basicText}>Date/Time</Text>
-          <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
-
-          <FlatList
-            style={styles.joblist}
-            data={this.state.jobs}
-            extraData={this.state}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({item, index}) => {
-              return(
-                item
-              )
-            }}
-          />
-
-          <TouchableOpacity style={styles.button} onPress={() => this.removeFromList()}><Text>MARK AS COMPLETE</Text></TouchableOpacity>
-
+      <View>
+        <View style={styles.container}>
+          <Text style={styles.title}>Job List</Text>
         </View>
+        <FlatList
+          data={this.state.jobs}
+          extraData={this.state}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({item, index}) => {
+            return(
+              <JobItem jobItem={item} removeJob={() => this.removeFromList(item)} />
+            )
+        }}
+        />
       </View>
     );
   }
