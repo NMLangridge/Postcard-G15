@@ -8,6 +8,17 @@ class NotificationsScreen extends React.Component {
     title: 'Postcard - Notifications',
   };
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      notifications: [
+        {id: 0, venue: 'King Tuts', date: 'Now', customer: 'James Hawthorne', type: 'Solo'},
+        {id: 1, venue: 'ABC', date: 'January 1st, 2020 at 7pm', customer: 'Ruby Riot', type: 'Band' },
+        {id: 2, venue: 'SECC', date: 'Februrary 10th, 2020 at 8pm', customer: 'Aaron Carter', type: 'Solo' }
+      ]
+    }
+  }
+
   //data in the FlatList is dummy data for visual purposes
   render() {
     return (
@@ -15,7 +26,8 @@ class NotificationsScreen extends React.Component {
         <Text style={styles.title}>Notifications</Text>
         <FlatList
           style={styles.list}
-          data={[{ venue: 'King Tuts', date: 'Now', customer: 'James Hawthorne', type: 'Solo' }, { venue: 'ABC', date: 'January 1st, 2020 at 7pm', customer: 'Ruby Riot', type: 'Band' }, { venue: 'SECC', date: 'Februrary 10th, 2020 at 8pm', customer: 'Aaron Carter', type: 'Solo' }]}
+          data={this.state.notifications}
+          extraData={this.state}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item, index }) => {
             return (
