@@ -19,8 +19,12 @@ export default class NotificationItem extends React.Component {
         <Text style={styles.biggerText}>{notif.customer}</Text>
         <Text style={styles.basicText}>Type of act</Text>
         <Text style={styles.biggerText}>{notif.type}</Text>
-        <TouchableOpacity style={styles.button}><Text>ACCEPT</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.button}><Text>REJECT</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text>ACCEPT</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text onPress={() => this.props.removeNotification()}>REJECT</Text>
+        </TouchableOpacity>
       </View>
     )
   }

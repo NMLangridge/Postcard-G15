@@ -17,9 +17,17 @@ class NotificationsScreen extends React.Component {
         {id: 2, venue: 'SECC', date: 'Februrary 10th, 2020 at 8pm', customer: 'Aaron Carter', type: 'Solo' }
       ]
     }
+    this.removeFromList = this.removeFromList.bind(this);
   }
 
-  //data in the FlatList is dummy data for visual purposes
+  removeFromList(item) {
+    let notifications = this.state.notifications;
+
+    notifications = notifications.filter((notification) => notification.id !== item.id);
+
+    this.setState({ notifications });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -31,7 +39,7 @@ class NotificationsScreen extends React.Component {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item, index }) => {
             return (
-              <NotificationItem notificationItem={item} />
+              <NotificationItem notificationItem={item} removeNotification={() => this.removeFromList(item)}/>
             )
           }}
         />
