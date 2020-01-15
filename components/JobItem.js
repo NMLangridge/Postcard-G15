@@ -11,12 +11,14 @@ export default class JobItem extends React.Component {
 
     return (
         <View style={styles.container}>
-          <Text style={styles.basicText}>Artist</Text>
-          <Text style={styles.biggerText}>{job.artist}</Text>
+          <Text style={styles.basicText}>When</Text>
+          <Text style={styles.biggerText}>{job.dateTime}</Text>
           <Text style={styles.basicText}>Venue</Text>
           <Text style={styles.biggerText}>{job.venue}</Text>
-          <Text style={styles.basicText}>Date/Time</Text>
-          <Text style={styles.biggerText}>{job.dateTime}</Text>
+          <Text style={styles.basicText}>Artist</Text>
+          <Text style={styles.biggerText}>{job.artist}</Text>
+          <Text style={styles.basicText}>Service Type</Text>
+          <Text style={styles.biggerText}>{job.serviceType}</Text>
           <TouchableOpacity style={styles.button}>
             <Text onPress={() => this.props.removeJob()}>MARK AS COMPLETE</Text>
           </TouchableOpacity>

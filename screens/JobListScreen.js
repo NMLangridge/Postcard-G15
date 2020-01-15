@@ -12,8 +12,8 @@ class NotificationsScreen extends React.Component {
     super(props)
     this.state = {
       jobs: [
-        {id: 0, artist: "Kyle's One Man Band", venue: "King Tuts", dateTime: "Friday 15th Nov, 8pm"},
-        {id: 1, artist: "Pandacar", venue: "Flying Duck", dateTime: "Friday 7th Feb, 8pm"}
+        {id: 0, dateTime: "Friday 15th Nov, 8pm", venue: "King Tuts", artist: "Kyle's One Man Band", serviceType: "Promo"},
+        {id: 1, dateTime: "Friday 7th Feb, 8pm", venue: "Flying Duck", artist: "Pandacar", serviceType: "Production"}
       ]
     }
     this.removeFromList = this.removeFromList.bind(this);

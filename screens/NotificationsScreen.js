@@ -12,9 +12,9 @@ class NotificationsScreen extends React.Component {
     super(props)
     this.state = {
       notifications: [
-        {id: 0, venue: 'King Tuts', date: 'Now', customer: 'James Hawthorne', type: 'Solo'},
-        {id: 1, venue: 'ABC', date: 'January 1st, 2020 at 7pm', customer: 'Ruby Riot', type: 'Band' },
-        {id: 2, venue: 'SECC', date: 'Februrary 10th, 2020 at 8pm', customer: 'Aaron Carter', type: 'Solo' }
+        {id: 0, dateTime: 'Now', venue: 'King Tuts', artist: 'James Hawthorne', serviceType: 'Live'},
+        {id: 1, dateTime: 'January 1st, 2020, 7pm', venue: 'ABC', artist: 'Ruby Riot', serviceType: 'Promo' },
+        {id: 2, dateTime: 'Februrary 10th, 2020, 8pm', venue: 'SECC', artist: 'Aaron Carter', serviceType: 'Production' }
       ]
     }
     this.removeFromList = this.removeFromList.bind(this);

@@ -11,14 +11,14 @@ export default class NotificationItem extends React.Component {
 
     return (
       <View style={styles.container}>
+        <Text style={styles.basicText}>When</Text>
+        <Text style={styles.biggerText}>{notif.dateTime}</Text>
         <Text style={styles.basicText}>Venue</Text>
         <Text style={styles.biggerText}>{notif.venue}</Text>
-        <Text style={styles.basicText}>Date</Text>
-        <Text style={styles.biggerText}>{notif.date}</Text>
-        <Text style={styles.basicText}>Customer</Text>
-        <Text style={styles.biggerText}>{notif.customer}</Text>
-        <Text style={styles.basicText}>Type of act</Text>
-        <Text style={styles.biggerText}>{notif.type}</Text>
+        <Text style={styles.basicText}>Artist</Text>
+        <Text style={styles.biggerText}>{notif.artist}</Text>
+        <Text style={styles.basicText}>Service Type</Text>
+        <Text style={styles.biggerText}>{notif.serviceType}</Text>
         <TouchableOpacity style={styles.button}>
           <Text>ACCEPT</Text>
         </TouchableOpacity>
