@@ -69,6 +69,33 @@ class GigsScreen extends React.Component {
       <ScrollView style={styles.inputContainer}>
         <View style={styles.screenContainer}>
           <Text style={styles.title}>MAKE A REQUEST</Text>
+          <Text style={styles.basicText}>Date:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(date) => {
+              this.setState({ date })
+            }}
+            value={this.state.date}
+            placeholder="Date"
+          />
+          <Text style={styles.basicText}>Time:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(time) => {
+              this.setState({ time })
+            }}
+            value={this.state.time}
+            placeholder="Time"
+          />
+          <Text style={styles.basicText}>Artist:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(bandProfile) => {
+              this.setState({ bandProfile })
+            }}
+            value={this.state.bandProfile}
+            placeholder="Artist"
+          />
           <Text style={styles.basicText}>Venue:</Text>
           <TextInput
             style={styles.input}
@@ -87,34 +114,6 @@ class GigsScreen extends React.Component {
               this.setState({ serviceType })
             }}
             value={this.state.serviceType}
-          />
-
-          <Text style={styles.basicText}>Band Profile:</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={(bandProfile) => {
-              this.setState({ bandProfile })
-            }}
-            value={this.state.bandProfile}
-            placeholder="Band Profile"
-          />
-          <Text style={styles.basicText}>Date:</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={(date) => {
-              this.setState({ date })
-            }}
-            value={this.state.date}
-            placeholder="Date"
-          />
-          <Text style={styles.basicText}>Time:</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={(time) => {
-              this.setState({ time })
-            }}
-            value={this.state.time}
-            placeholder="Time"
           />
 
           <TouchableHighlight
