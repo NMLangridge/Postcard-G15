@@ -87,15 +87,6 @@ class GigsScreen extends React.Component {
             value={this.state.time}
             placeholder="Time"
           />
-          <Text style={styles.basicText}>Artist:</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={(bandProfile) => {
-              this.setState({ bandProfile })
-            }}
-            value={this.state.bandProfile}
-            placeholder="Artist"
-          />
           <Text style={styles.basicText}>Venue:</Text>
           <TextInput
             style={styles.input}
@@ -104,6 +95,15 @@ class GigsScreen extends React.Component {
             }}
             value={this.state.venue}
             placeholder="Venue"
+          />
+          <Text style={styles.basicText}>Artist:</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(bandProfile) => {
+              this.setState({ bandProfile })
+            }}
+            value={this.state.bandProfile}
+            placeholder="Artist"
           />
           <Text style={styles.basicText}>Service Type:</Text>
           <RadioButtonsServiceType
