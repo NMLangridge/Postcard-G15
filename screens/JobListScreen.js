@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, FlatList, Text, View, Button, TouchableOpacity } from 'react-native';
 import JobItem from '../components/JobItem';
 
-class NotificationsScreen extends React.Component {
+class JobListScreen extends React.Component {
 
   static navigationOptions = {
     title: 'Postcard - JobList',
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default NotificationsScreen;
+export default JobListScreen;
