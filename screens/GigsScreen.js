@@ -1,7 +1,5 @@
 import React from 'react';
 import { StyleSheet, FlatList, ScrollView, TextInput, Text, View, Button, TouchableOpacity, TouchableHighlight } from 'react-native';
-import GigForm from '../components/GigForm';
-import RadioButtonsServiceType from '../components/RadioButtonsServiceType.js';
 
 class GigsScreen extends React.Component {
 
@@ -12,80 +10,30 @@ class GigsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      when: '',
       venue: '',
-      serviceType: '',
       bandProfile: '',
-      date: '',
-      time: ''
+      serviceType: ''
     }
-
-    this.changeServiceType = this.changeServiceType.bind(this);
-
-  }
-
-  changeServiceType(value) {
-    this.setState({ serviceType: value });
   }
 
   render() {
-    const options = [
-      {
-        key: 'live',
-        text: 'Live Photos',
-      },
-      {
-        key: 'promo',
-        text: 'Promo Shots',
-      },
-      {
-        key: 'production',
-        text: 'Production',
-      }
-    ];
+
     const { navigate } = this.props.navigation;
     return (
 
-      // <View style={styles.container}>
-      //   <Text style={styles.title}>Gigs</Text>
-      //   <View style={styles.giglist}>
-      //     <Text style={styles.basicText}>Venue</Text>
-      //     <Text style={styles.biggerText}>King Tuts</Text>
-      //     <Text style={styles.basicText}>Date/Time</Text>
-      //     <Text style={styles.biggerText}>Friday 15th Nov, 8pm</Text>
-      //   </View>
-      //   <FlatList
-      //     style={styles.giglist}
-      //     keyExtractor={(item, index) => index.toString()}
-      //     renderItem={ ({item, index}) => {
-      //       return(
-      //         <GigForm gigForm={item} />
-      //       )
-      //     }}
-      //     >
-      //   </FlatList>
-      //
-      // </View>
 
       <ScrollView style={styles.inputContainer}>
         <View style={styles.screenContainer}>
           <Text style={styles.title}>MAKE A REQUEST</Text>
-          <Text style={styles.basicText}>Date:</Text>
+          <Text style={styles.basicText}>When:</Text>
           <TextInput
             style={styles.input}
-            onChangeText={(date) => {
-              this.setState({ date })
+            onChangeText={(when) => {
+              this.setState({ when })
             }}
-            value={this.state.date}
+            value={this.state.when}
             placeholder="Date"
-          />
-          <Text style={styles.basicText}>Time:</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={(time) => {
-              this.setState({ time })
-            }}
-            value={this.state.time}
-            placeholder="Time"
           />
           <Text style={styles.basicText}>Venue:</Text>
           <TextInput
@@ -106,20 +54,16 @@ class GigsScreen extends React.Component {
             placeholder="Artist"
           />
           <Text style={styles.basicText}>Service Type:</Text>
-          <RadioButtonsServiceType
-            options={options}
-            serviceType={this.serviceType}
+          <TextInput
             style={styles.input}
             onChangeText={(serviceType) => {
               this.setState({ serviceType })
             }}
             value={this.state.serviceType}
+            placeholder="Service Type"
           />
 
-          <TouchableHighlight
-
-          >
-
+          <TouchableHighlight>
             <Text style={styles.button}>SUBMIT REQUEST</Text>
           </TouchableHighlight>
 
